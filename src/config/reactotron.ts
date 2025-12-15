@@ -1,11 +1,19 @@
 import Reactotron from 'reactotron-react-native';
 import { queryClient } from './queryClient';
+import reactotronZustand from 'reactotron-plugin-zustand';
+import { useBreedsStore } from '../store/breedsStore';
 
 const reactotron = Reactotron
   .configure({
     name: 'CatBreedsRNApp',
   })
   .useReactNative()
+  .use(
+    reactotronZustand({
+      stores: [{ name: 'breeds', store: useBreedsStore }],
+      omitFunctionKeys: true,
+    })
+  )
   .connect();
 
 if (__DEV__) {
