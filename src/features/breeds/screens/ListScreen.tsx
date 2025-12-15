@@ -1,13 +1,18 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useInfiniteBreeds, useSearchBreeds } from '../hooks/useBreeds';
 import { BreedList, SearchBar } from '../components';
+import { BreedsStackParamList } from '../types/navigation';
+import { Breed } from '../types';
+
+type ListScreenProps = NativeStackScreenProps<BreedsStackParamList, 'List'>;
 
 /**
  * Screen displaying infinite scrolling list of cat breeds
  */
-export const ListScreen = (): React.JSX.Element => {
+export const ListScreen = ({ navigation }: ListScreenProps): React.JSX.Element => {
   const [searchQuery, setSearchQuery] = useState('');
   
   const { data, isLoading, error, fetchNextPage, hasNextPage, isFetchingNextPage } = useInfiniteBreeds();
@@ -24,6 +29,10 @@ export const ListScreen = (): React.JSX.Element => {
     }
   }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
 
+  const handleBreedPress = useCallback((breed: Breed) => {
+    navigation.navigate('Detail', { breed });
+  }, [navigation]);
+
   return (
     <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
       <SearchBar onSearch={setSearchQuery} />
@@ -32,6 +41,7 @@ export const ListScreen = (): React.JSX.Element => {
         loading={searchQuery ? isSearching : (isLoading || isFetchingNextPage)}
         error={searchQuery ? searchError?.message : error?.message}
         onEndReached={searchQuery ? undefined : handleLoadMore}
+        onBreedPress={handleBreedPress}
       />
     </SafeAreaView>
   );
