@@ -20,6 +20,28 @@ class BreedsService {
 
     return response.json();
   }
+
+  async searchBreeds(query: string, attachImage: boolean = true): Promise<Breed[]> {
+    const params = new URLSearchParams({
+      q: query,
+      ...(attachImage && { attach_image: '1' }),
+    });
+
+    const response = await fetch(
+      `${BASE_URL}/breeds/search?${params.toString()}`,
+      {
+        headers: {
+          'x-api-key': CAT_API_KEY,
+        },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error('Failed to search breeds');
+    }
+
+    return response.json();
+  }
 }
 
 export const breedsService = new BreedsService();
