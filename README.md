@@ -1,97 +1,146 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Cat Breeds App - React Native
 
-# Getting Started
+## Introducción
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+Este proyecto ha sido desarrollado con fines de **prueba técnica**, cumpliendo con todos los escenarios y requerimientos solicitados. La aplicación permite explorar diferentes razas de gatos, visualizar sus detalles y navegar de manera fluida entre pantallas.
 
-## Step 1: Start Metro
+### Decisiones Arquitectónicas
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+El proyecto implementa una **arquitectura escalable y modular** que permite el crecimiento sostenible de la aplicación. Se han aplicado principios de **SOLID** y **Clean Code** en todo el desarrollo, garantizando un código mantenible, legible y fácil de extender.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+#### Principios Aplicados:
+- **Single Responsibility Principle (SRP)**: Cada componente y módulo tiene una única responsabilidad bien definida.
+- **Separation of Concerns**: Clara separación entre lógica de negocio, presentación y gestión de estado.
+- **Clean Code**: Nombres descriptivos, funciones pequeñas y cohesivas, y código autodocumentado.
+- **Feature-Based Architecture**: Organización por features/módulos en lugar de por tipo de archivo.
+
+## Screenshots
+
+![alt text](screenshots.png)
+
+## Estructura del Proyecto
+
+```
+.
+├── app-icons/                    # Iconos de la aplicación
+├── ios/                          # Configuración nativa de iOS
+│   └── CatBreedsRNApp/          # Archivos Swift y configuración
+└── src/                          # Código fuente de la aplicación
+    ├── assets/                   # Recursos estáticos
+    │   ├── bootsplash/          # Splash screen assets
+    │   └── images/              # Imágenes de la aplicación
+    ├── components/              # Componentes compartidos
+    │   ├── layouts/             # Componentes de layout (headers, wrappers)
+    │   └── ui/                  # Componentes UI reutilizables
+    ├── config/                  # Configuración global
+    │   ├── constants.ts         # Constantes de la aplicación
+    │   ├── queryClient.ts       # Configuración de React Query
+    │   └── reactotron.ts        # Configuración de Reactotron (dev tools)
+    ├── core/                    # Núcleo de la aplicación
+    │   └── navigation/          # Configuración de navegación
+    ├── features/                # Features/Módulos de la aplicación
+    │   └── breeds/              # Feature de razas de gatos
+    │       ├── components/      # Componentes específicos del feature
+    │       ├── hooks/           # Custom hooks del feature
+    │       ├── navigation/      # Navegación específica del feature
+    │       ├── screens/         # Pantallas del feature
+    │       ├── services/        # Servicios/API calls
+    │       ├── shared/          # Utilidades compartidas del feature
+    │       └── types/           # Tipos TypeScript del feature
+    └── store/                   # Gestión de estado global
+        └── breedsStore.ts       # Store de Zustand para breeds
+```
+## Requisitos Previos
+
+> **Nota**: Asegúrate de tener configurado tu entorno de desarrollo para React Native siguiendo la [guía oficial](https://reactnative.dev/docs/set-up-your-environment).
+
+### Versiones Requeridas
+
+- **Node.js**: v22.21.1
+- **npm**: 10.9.4
+- **Gestión de Paquetes**: Solo se utiliza **npm** (no yarn ni otros gestores)
+
+## Getting Started
+
+### 1. Clonar el Repositorio e Instalar Dependencias
 
 ```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+# Instalar dependencias de npm
+npm install
 ```
 
-## Step 2: Build and run your app
+### 2. Configurar Dependencias Nativas (Solo iOS)
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+Para iOS, es necesario instalar las dependencias de CocoaPods. 
 
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+**Primera vez** o después de clonar el proyecto:
 
 ```sh
+# Instalar bundler (si no lo tienes instalado)
 bundle install
-```
 
-Then, and every time you update your native dependencies, run:
-
-```sh
+# Instalar pods
+cd ios
 bundle exec pod install
+cd ..
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+**Cada vez que se actualicen las dependencias nativas:**
 
 ```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+cd ios
+bundle exec pod install
+cd ..
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+### 3. Iniciar Metro Bundler
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+Metro es el bundler de JavaScript para React Native. Debes iniciarlo antes de ejecutar la aplicación:
 
-## Step 3: Modify your app
+```sh
+npm start
+```
 
-Now that you have successfully run the app, let's make changes!
+### 4. Ejecutar la Aplicación
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+Con Metro ejecutándose, abre una nueva terminal y ejecuta uno de los siguientes comandos:
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+#### iOS
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+```sh
+npm run ios
+```
 
-## Congratulations! :tada:
+#### Android
 
-You've successfully run and modified your React Native App. :partying_face:
+```sh
+npm run android
+```
 
-### Now what?
+Si todo está configurado correctamente, deberías ver la aplicación ejecutándose en el simulador de iOS, emulador de Android o dispositivo físico conectado.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+## Scripts Disponibles
 
-# Troubleshooting
+- `npm start`: Inicia Metro Bundler
+- `npm run ios`: Ejecuta la app en iOS
+- `npm run android`: Ejecuta la app en Android
+- `npm test`: Ejecuta los tests con Jest
+- `npm run lint`: Ejecuta el linter (ESLint)
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## Tecnologías Utilizadas
 
-# Learn More
+- **React Native**: Framework principal
+- **TypeScript**: Tipado estático
+- **React Query (TanStack Query)**: Gestión de estado del servidor
+- **Zustand**: Gestión de estado global
+- **React Navigation**: Navegación entre pantallas
+- **Axios**: Cliente HTTP para llamadas a API
+- **React Native Bootsplash**: Splash screen nativo
+- **Fast Image**: Optimización de carga de imágenes
 
-To learn more about React Native, take a look at the following resources:
+## Recursos Adicionales
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- [Documentación de React Native](https://reactnative.dev)
+- [Documentación de TypeScript](https://www.typescriptlang.org/)
+- [React Query Docs](https://tanstack.com/query/latest)
+- [Zustand Docs](https://docs.pmnd.rs/zustand/getting-started/introduction)
