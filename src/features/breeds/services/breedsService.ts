@@ -2,11 +2,15 @@ import { CAT_API_KEY } from '@env';
 import { Breed } from '../types';
 
 const BASE_URL = 'https://api.thecatapi.com/v1';
+const IMAGE_BASE_URL = 'https://cdn2.thecatapi.com/images';
 
+/**
+ * Service for managing cat breeds data from The Cat API
+ */
 class BreedsService {
   async getBreeds(limit: number = 10, page: number = 0): Promise<Breed[]> {
     const response = await fetch(
-      `${BASE_URL}/breeds?limit=${limit}&page=${page}&attach_image=1`,
+      `${BASE_URL}/breeds?limit=${limit}&page=${page}`,
       {
         headers: {
           'x-api-key': CAT_API_KEY,
@@ -18,7 +22,22 @@ class BreedsService {
       throw new Error('Failed to fetch breeds');
     }
 
-    return response.json();
+    const breeds: Breed[] = await response.json();
+    
+    return breeds.map((breed) => {
+      if (breed.reference_image_id) {
+        return {
+          ...breed,
+          image: {
+            id: breed.reference_image_id,
+            url: `${IMAGE_BASE_URL}/${breed.reference_image_id}.jpg`,
+            width: 0,
+            height: 0,
+          },
+        };
+      }
+      return breed;
+    });
   }
 
   async searchBreeds(query: string, attachImage: boolean = true): Promise<Breed[]> {
