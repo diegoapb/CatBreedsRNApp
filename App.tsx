@@ -11,9 +11,21 @@ import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from 'react-native-safe-area-context';
+import { useEffect } from 'react';
+import BootSplash from 'react-native-bootsplash';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
+
+  useEffect(() => {
+    const init = async () => {
+      // Fetch cats data to generate list faster while showing splash screen
+    };
+
+    init().finally(async () => {
+      await BootSplash.hide({ fade: true });
+    });
+  }, []);
 
   return (
     <SafeAreaProvider>
