@@ -1,16 +1,10 @@
-/**
- * Home Screen
- *
- * @format
- */
-
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export const Home = (): React.JSX.Element => {
+export const ListScreen = (): React.JSX.Element => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Cat Breeds App</Text>
+      <Text style={styles.text}>Cat Breeds</Text>
     </View>
   );
 };

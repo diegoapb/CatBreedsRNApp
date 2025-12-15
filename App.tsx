@@ -9,7 +9,7 @@ import { StatusBar, useColorScheme } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import BootSplash from 'react-native-bootsplash';
-import { AppNavigator } from './src/navigation/AppNavigator';
+import { RootNavigator } from './src/core/navigation/RootNavigator';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -31,7 +31,7 @@ function App(): React.JSX.Element {
           barStyle={isDarkMode ? 'light-content' : 'dark-content'}
           backgroundColor={isDarkMode ? '#1a1a1a' : '#ffffff'}
         />
-        <AppNavigator />
+        <RootNavigator />
       </NavigationContainer>
     </SafeAreaProvider>
   );

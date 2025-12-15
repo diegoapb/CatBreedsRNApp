@@ -1,11 +1,11 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Home } from '../screens/Home';
+import { BreedsNavigator } from '../../features/breeds/navigation/BreedsNavigator';
 
 const Stack = createNativeStackNavigator();
 
-export const AppNavigator = () => (
+export const RootNavigator = () => (
   <Stack.Navigator screenOptions={{ headerShown: false }}>
-    <Stack.Screen name="Home" component={Home} />
+    <Stack.Screen name="Breeds" component={BreedsNavigator} />
   </Stack.Navigator>
 );
