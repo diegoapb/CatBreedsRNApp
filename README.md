@@ -1,5 +1,9 @@
 # Cat Breeds App - React Native
 
+> **Autor**: Diego Alejandro Parra Bravo  
+> **Fecha**: 15 de diciembre de 2025  
+> **Repositorio**: [https://github.com/diegoapb/CatBreedsRNApp](https://github.com/diegoapb/CatBreedsRNApp)
+
 ## Introducción
 
 Este proyecto ha sido desarrollado con fines de **prueba técnica**, cumpliendo con todos los escenarios y requerimientos solicitados. La aplicación permite explorar diferentes razas de gatos, visualizar sus detalles y navegar de manera fluida entre pantallas.
@@ -65,6 +69,12 @@ El proyecto implementa una **arquitectura escalable y modular** que permite el c
 ### 1. Clonar el Repositorio e Instalar Dependencias
 
 ```sh
+# Clonar el repositorio
+git clone https://github.com/diegoapb/CatBreedsRNApp.git
+
+# Navegar al directorio del proyecto
+cd CatBreedsRNApp
+
 # Instalar dependencias de npm
 npm install
 ```
@@ -134,7 +144,6 @@ Si todo está configurado correctamente, deberías ver la aplicación ejecutánd
 - **React Query (TanStack Query)**: Gestión de estado del servidor
 - **Zustand**: Gestión de estado global
 - **React Navigation**: Navegación entre pantallas
-- **Axios**: Cliente HTTP para llamadas a API
 - **React Native Bootsplash**: Splash screen nativo
 - **Fast Image**: Optimización de carga de imágenes
 
