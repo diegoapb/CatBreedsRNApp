@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04B2D7ED2EEFFB05000F0B15 /* CatNativeImageViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2D7EB2EEFFB05000F0B15 /* CatNativeImageViewManager.m */; };
+		04B2D7EE2EEFFB05000F0B15 /* CatNativeImageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2D7EC2EEFFB05000F0B15 /* CatNativeImageViewManager.swift */; };
 		0C80B921A6F3F58F76C31292 /* libPods-CatBreedsRNApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-CatBreedsRNApp.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		3B4CE33F31F242EEBA2F230B /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA153AA81F045BCBB07D2EF /* BootSplash.storyboard */; };
@@ -17,16 +19,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04B2D7EA2EEFFB05000F0B15 /* CatBreedsRNApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CatBreedsRNApp-Bridging-Header.h"; path = "CatBreedsRNApp/CatBreedsRNApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		04B2D7EB2EEFFB05000F0B15 /* CatNativeImageViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CatNativeImageViewManager.m; path = CatBreedsRNApp/CatNativeImageViewManager.m; sourceTree = "<group>"; };
+		04B2D7EC2EEFFB05000F0B15 /* CatNativeImageViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CatNativeImageViewManager.swift; path = CatBreedsRNApp/CatNativeImageViewManager.swift; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* CatBreedsRNApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatBreedsRNApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CatBreedsRNApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CatBreedsRNApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = CatBreedsRNApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		1F528844DE714DA2A0DF33CD /* Colors.xcassets */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = CatBreedsRNApp/Colors.xcassets; sourceTree = "<group>"; };
+		1F528844DE714DA2A0DF33CD /* Colors.xcassets */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = CatBreedsRNApp/Colors.xcassets; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-CatBreedsRNApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatBreedsRNApp.debug.xcconfig"; path = "Target Support Files/Pods-CatBreedsRNApp/Pods-CatBreedsRNApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-CatBreedsRNApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatBreedsRNApp.release.xcconfig"; path = "Target Support Files/Pods-CatBreedsRNApp/Pods-CatBreedsRNApp.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-CatBreedsRNApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CatBreedsRNApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = CatBreedsRNApp/AppDelegate.swift; sourceTree = "<group>"; };
-		7BA153AA81F045BCBB07D2EF /* BootSplash.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = BootSplash.storyboard; path = CatBreedsRNApp/BootSplash.storyboard; sourceTree = "<group>"; };
+		7BA153AA81F045BCBB07D2EF /* BootSplash.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = BootSplash.storyboard; path = CatBreedsRNApp/BootSplash.storyboard; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CatBreedsRNApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -76,6 +81,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				04B2D7EA2EEFFB05000F0B15 /* CatBreedsRNApp-Bridging-Header.h */,
+				04B2D7EB2EEFFB05000F0B15 /* CatNativeImageViewManager.m */,
+				04B2D7EC2EEFFB05000F0B15 /* CatNativeImageViewManager.swift */,
 				13B07FAE1A68108700A75B9A /* CatBreedsRNApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -199,9 +207,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CatBreedsRNApp/Pods-CatBreedsRNApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CatBreedsRNApp/Pods-CatBreedsRNApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -238,9 +250,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CatBreedsRNApp/Pods-CatBreedsRNApp-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CatBreedsRNApp/Pods-CatBreedsRNApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -254,6 +270,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B2D7ED2EEFFB05000F0B15 /* CatNativeImageViewManager.m in Sources */,
+				04B2D7EE2EEFFB05000F0B15 /* CatNativeImageViewManager.swift in Sources */,
 				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +301,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CatBreedsRNApp;
+				SWIFT_OBJC_BRIDGING_HEADER = "CatBreedsRNApp/CatBreedsRNApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -310,6 +329,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CatBreedsRNApp;
+				SWIFT_OBJC_BRIDGING_HEADER = "CatBreedsRNApp/CatBreedsRNApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

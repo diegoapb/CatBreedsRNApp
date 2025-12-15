@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { DetailText } from '../atoms/DetailText';
+import { CatNativeImage } from '@/components/ui/CatNativeImage';
 
 interface BreedDetailHeaderProps {
   name: string;
@@ -10,7 +11,7 @@ interface BreedDetailHeaderProps {
 
 export const BreedDetailHeader: React.FC<BreedDetailHeaderProps> = ({ name, origin, imageUrl }) => (
   <View>
-    {imageUrl && <Image source={{ uri: imageUrl }} style={styles.image} resizeMode="cover" />}
+    {imageUrl && <CatNativeImage source={{ uri: imageUrl }} style={styles.image} resizeMode="cover" />}
     <View style={styles.info}>
       <DetailText variant="title">{name}</DetailText>
       <DetailText variant="subtitle" style={styles.origin}>{origin}</DetailText>
