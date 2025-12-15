@@ -11,6 +11,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import BootSplash from 'react-native-bootsplash';
 import { RootNavigator } from './src/core/navigation/RootNavigator';
 
+if (__DEV__) {
+  import('./src/config/reactotron');
+}
+
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
